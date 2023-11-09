@@ -119,6 +119,31 @@ class GoogleLogin(SocialLoginView): # if you want to use Authorization Code Gran
     client_class = OAuth2Client
 ```
 
+---
+## Bug
+```
+IntegrityError at /dj-rest-auth/google/
+UNIQUE constraint failed: auth_user.username
+Request Method:	POST
+Request URL:	http://localhost:8000/dj-rest-auth/google/
+Django Version:	4.2.7
+Exception Type:	IntegrityError
+Exception Value:	
+UNIQUE constraint failed: auth_user.username
+Exception Location:	/opt/homebrew/lib/python3.11/site-packages/django/db/backends/sqlite3/base.py, line 328, in execute
+Raised during:	authentication.views.GoogleLogin
+Python Executable:	/opt/homebrew/opt/python@3.11/bin/python3.11
+Python Version:	3.11.6
+Python Path:	
+['/Users/chris/Documents/GitHub/django_oauth',
+ '/opt/homebrew/Cellar/python@3.11/3.11.6_1/Frameworks/Python.framework/Versions/3.11/lib/python311.zip',
+ '/opt/homebrew/Cellar/python@3.11/3.11.6_1/Frameworks/Python.framework/Versions/3.11/lib/python3.11',
+ '/opt/homebrew/Cellar/python@3.11/3.11.6_1/Frameworks/Python.framework/Versions/3.11/lib/python3.11/lib-dynload',
+ '/opt/homebrew/lib/python3.11/site-packages']
+Server time:	
+```
+### solution:
+ - https://github.com/pennersr/django-allauth/issues/1014
 
 ## References
 [dj-rest-auth documentation](https://dj-rest-auth.readthedocs.io/en/latest/installation.html)
@@ -130,3 +155,5 @@ class GoogleLogin(SocialLoginView): # if you want to use Authorization Code Gran
 [Django React JWT Authentication Applying Google Login In React.js](https://www.youtube.com/watch?v=A22oOjoH5bQ&ab_channel=Rizky%27sWebdev)
 
 [django-react-jwt Github](https://github.com/rizkyrad24/django-react-jwt/tree/main)
+
+[Django auth Logout](https://stackoverflow.com/questions/43069712/how-to-logout-in-django)

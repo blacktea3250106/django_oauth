@@ -11,5 +11,6 @@ class GoogleLogin(SocialLoginView): # if you want to use Authorization Code Gran
     callback_url = "http://localhost:3000"
     client_class = OAuth2Client
 
+
 def HelloWorld(request):
     return HttpResponse('Hello World!')
