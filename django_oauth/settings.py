@@ -168,12 +168,6 @@ REST_FRAMEWORK = {
     ),
 }
 
-
-
-
-
-
-
 # simple jwt
 from datetime import timedelta
 SIMPLE_JWT = {
