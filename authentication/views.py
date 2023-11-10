@@ -13,4 +13,5 @@ class GoogleLogin(SocialLoginView): # if you want to use Authorization Code Gran
 
 
 def HelloWorld(request):
+    return render(request, "google_login.html")
     return HttpResponse('Hello World!')
