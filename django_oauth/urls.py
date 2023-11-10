@@ -17,13 +17,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from authentication.views import GoogleLogin
-from allauth.account.views import LogoutView
+from dj_rest_auth.views import LogoutView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('dj-rest-auth/', include('dj_rest_auth.urls')),
     path('dj-rest-auth/google/', GoogleLogin.as_view(), name='google-login'),
-    path('logout/', LogoutView.as_view(), name="logout"),
+    path('dj-rest-auth/logout/', LogoutView.as_view(), name='logout'),
     # path('dj-rest-auth/registration/', include('dj_rest_auth.registration.urls'), name='registration'),
     path('', include('authentication.urls')),
 ]
